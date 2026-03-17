@@ -7,7 +7,7 @@ class Solution {
     if(target<0){
       return;
     }
-    for(int ind = i;ind < candidates.length;ind++){
+    for(int ind=i;ind < candidates.length;ind++){
         // if(candidates[ind]>target){
         //   continue;
         // }
@@ -21,7 +21,6 @@ class Solution {
         List<Integer>temp = new ArrayList<>();
         solve(res,temp,candidates,target,0);
         return res;
-
     }
 }
 
