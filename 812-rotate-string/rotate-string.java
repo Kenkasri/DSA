@@ -20,20 +20,30 @@ class Solution {
       //   j++;
       //  }
       //  return true;
-         int n = s.length();
 
-        if (n != goal.length()) {
-            return false;
-        }
-        for(int start = 0;start<n;start++){
-          int j = 0;
-          while(j<n&&s.charAt((start+j)%n)==goal.charAt(j)){
-            j++;
-          }
-          if(j==n){
-            return true;
-          }
-        }
+
+        //  int n = s.length();
+
+        // if (n != goal.length()) {
+        //     return false;
+        // }
+        // for(int start = 0;start<n;start++){
+        //   int j = 0;
+        //   while(j<n&&s.charAt((start+j)%n)==goal.charAt(j)){
+        //     j++;
+        //   }
+        //   if(j==n){
+        //     return true;
+        //   }
+        // }
+        //   return false;
+
+     
+
+
+     if(s.length()!=goal.length()){
           return false;
+        }
+     return (s + s).contains(goal);
     }
 }
