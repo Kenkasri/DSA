@@ -21,7 +21,8 @@ class Solution {
           odd = odd.next;
           even.next = odd.next;
           even = even.next;
-
+          
+          
         }
         odd.next = evenhead;
         return head;
