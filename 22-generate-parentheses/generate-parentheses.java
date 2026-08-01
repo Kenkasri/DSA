@@ -1,19 +1,19 @@
 class Solution {
-  public void backtrack(List<String>res,String s,int oc,int cc,int n){
+  public void paraenthesis(List<String>list,int n,String s,int op,int cp){
     if(s.length()==n*2){
-      res.add(s);
+      list.add(s);
       return;
     }
-    if(oc<n){
-      backtrack(res,s+"(",oc+1,cc,n);
+    if(op<n){
+       paraenthesis(list,n,s+'(',op+1,cp);
     }
-    if(cc<oc){
-      backtrack(res,s+")",oc,cc+1,n);
+    if(cp<op){
+      paraenthesis(list,n,s+')',op,cp+1);
     }
   }
     public List<String> generateParenthesis(int n) {
-        List<String>result = new ArrayList<>();
-        backtrack(result,"",0,0,n);
-        return result;
+       List<String>list =  new ArrayList<>();
+       paraenthesis(list,n,"",0,0);
+       return list; 
     }
 }
