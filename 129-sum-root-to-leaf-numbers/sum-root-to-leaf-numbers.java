@@ -14,24 +14,20 @@
  * }
  */
 class Solution {
-  public int findsum(TreeNode root,int sum){
-   if(root==null){
-    return  0;
-  }
-
-  sum =sum *10+root.val; 
-  if(root.left==null&&root.right==null){
-    return sum;
-  }
-  return findsum(root.left,sum)+findsum(root.right,sum);
-  }
+   public int sumNum(TreeNode root,int sum){
+    if(root==null){
+      return 0;
+    }
+  
+    sum = sum*10+root.val;
+      if(root.left==null&&root.right==null){
+         return sum;
+    }
+    return sumNum(root.left,sum)+sumNum(root.right,sum);
+   }
     public int sumNumbers(TreeNode root) {
-        if(root == null){
-          return 0;
-        }
-        int sum = 0;
-      sum = findsum(root,sum);
+       int sum = 0;
+      sum =  sumNum(root,sum);
       return sum;
-
     }
 }
